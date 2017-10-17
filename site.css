@@ -1,0 +1,160 @@
+
+/*
+ * Instruction Styles
+*/
+header {
+  margin: 2em;
+
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+header h1 {
+  margin: 2em;
+
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+header p {
+  max-width: 550px;
+
+  margin: auto;
+
+  line-height: 1.5em;
+}
+
+
+/*
+ *
+ * YOUR CSS HERE
+*/
+.progress-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bounding-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 176px;
+  height: 176px;
+  border-radius: 88px;
+  position: relative;
+  z-index: 4;
+  background-color: #FFF;
+}
+
+.hiding-box {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  z-index: 3;
+  background-color: #333;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  animation-name: toggleTopRight;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  animation-name: toggleBottomRight;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  animation-name: toggleBottomLeft;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  animation-name: toggleTopLeft;
+  background-color: white;
+}
+
+.progress-box {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  background-color: #333;
+  transform-origin: bottom right;
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes toggleTopRight {
+  0% {
+    opacity: 0;
+  } 
+  25% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes toggleBottomRight {
+  0% {
+    opacity: 0;
+  } 
+  50% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes toggleBottomLeft {
+  0% {
+    opacity: 0;
+  } 
+  75% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes toggleTopLeft {
+  0% {
+    opacity: 1.0;
+  } 
+  75% {
+    opacity: 0;
+  }
+}
